@@ -1,0 +1,11 @@
+node_modules/
+site/dist/
+results/cache/
+results/outputs/
+results-*/cache/
+results-*/outputs/
+*.log
+.env*
+.DS_Store
+site/tsconfig*.tsbuildinfo
+site/node_modules/.tmp/

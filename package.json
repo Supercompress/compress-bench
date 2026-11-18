@@ -1,0 +1,20 @@
+{
+  "name": "compress-bench",
+  "private": true,
+  "description": "Rigorous, seeded benchmark for context compressors used by coding agents.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "bench": "node src/cli.js",
+    "bench:dev": "node src/cli.js --split dev",
+    "bench:fresh": "node src/cli.js --split fresh",
+    "arms": "node src/cli.js --list",
+    "report": "node src/rerender.js",
+    "site:data": "node site/scripts/build-data.cjs",
+    "site:dev": "cd site && pnpm dev",
+    "site:build": "cd site && pnpm build"
+  }
+}
