@@ -28,7 +28,7 @@ function render(res) {
   const rank = res.tiers.order.map((t) => arms.find((a) => a.name === t.arm));
   L.push(
     table(
-      ["#", "Arm", "Tier", "n", "Primary recall [95% CI]", "All-gold recall", "Cut [95% CI]", "Recovery-adj. cut", "vs BM25 @ same cut", "Errors", "p50"],
+      ["#", "Arm", "Tier", "n", "Primary recall [95% CI]", "All-gold recall", "Cut [95% CI]", "Recovery-adj. cut", "Abstained", "Recall when it compressed", "vs BM25 @ same cut", "Errors", "p50"],
       rank.map((a, i) => [
         i + 1,
         `**${a.name}**`,
@@ -38,6 +38,8 @@ function render(res) {
         pct(a.summary.all.p),
         ci(a.summary.cut),
         pct(a.summary.eff_cut.est),
+        pct(a.summary.abstain_rate),
+        a.summary.compressed_recall ? `${pct(a.summary.compressed_recall.p)} (n=${a.summary.compressed_recall.n})` : "—",
         a.frontier_lift ? `${a.frontier_lift.lift >= 0 ? "+" : ""}${(100 * a.frontier_lift.lift).toFixed(1)} pp${a.frontier_lift.clamped ? "*" : ""}` : "—",
         a.summary.errors,
         ms(a.summary.ms_p50),
@@ -45,6 +47,7 @@ function render(res) {
     )
   );
   L.push(``, `\\* arm's cut is outside the measured BM25 range; compared against the nearest BM25 point.`);
+  L.push(``, `"Abstained" is the share of tasks returned with under 5% cut. Passing input through always keeps the answer, so read recall next to it; "recall when it compressed" scores only the tasks the arm actually cut.`);
 
   L.push(``, `### Reference baselines`, ``);
   L.push(

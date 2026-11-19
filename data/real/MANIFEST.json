@@ -1,0 +1,41 @@
+{
+  "source": "nebius/SWE-agent-trajectories",
+  "license": "CC-BY-4.0",
+  "salt_sha256": "4fe53484359825aa8c1922ec1f52f1cfe89fd23c81ed38a1388fd0eecaef9737",
+  "splits": {
+    "real-dev": {
+      "n": 193,
+      "sha256": "8f8417f9515764c5d023b8f5a6895b2909a9430b74e4ff9aeca019cced9a891f",
+      "families": {
+        "file-view": 60,
+        "search": 55,
+        "shell": 21,
+        "traceback": 31,
+        "test-run": 23,
+        "find": 3
+      },
+      "sizes": {
+        "small": 130,
+        "large": 21,
+        "medium": 42
+      }
+    },
+    "real-test": {
+      "n": 175,
+      "sha256": "578f21ce62d8f61a8a4cee5054fcbd4d982ceb5382299d2de0256e452ce0ff6d",
+      "families": {
+        "file-view": 60,
+        "test-run": 27,
+        "search": 49,
+        "traceback": 22,
+        "find": 5,
+        "shell": 12
+      },
+      "sizes": {
+        "medium": 43,
+        "small": 118,
+        "large": 14
+      }
+    }
+  }
+}

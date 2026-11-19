@@ -75,6 +75,38 @@ function buildTask(family, { splitSeed, size, position, style, rep }) {
   return null;
 }
 
+/**
+ * Real split: tool outputs from public SWE-agent runs (see scripts/build_real_split.py).
+ *   real-dev   data/real/dev.jsonl.gz, public, fine to tune against
+ *   real-test  sealed; read from $COMPRESS_BENCH_REAL_TEST (default ~/.config/compress-bench/real-test.jsonl.gz)
+ */
+function loadRealSplit(split) {
+  const fs = require("fs");
+  const os = require("os");
+  const path = require("path");
+  const zlib = require("zlib");
+  const local = (f) => path.join(os.homedir(), ".config", "compress-bench", f);
+  const file = split === "real-dev"
+    ? path.join(__dirname, "..", "data", "real", "dev.jsonl.gz")
+    : split === "real-external"
+      ? process.env.COMPRESS_BENCH_REAL_EXTERNAL || local("external-openhands.jsonl.gz")
+      : process.env.COMPRESS_BENCH_REAL_TEST || local("real-test.jsonl.gz");
+  if (!fs.existsSync(file)) throw new Error(`${split}: ${file} not found`);
+  const blob = zlib.gunzipSync(fs.readFileSync(file)).toString("utf8");
+  const tasks = [];
+  for (const line of blob.split("\n")) {
+    if (!line.trim()) continue;
+    const t = JSON.parse(line);
+    const problems = validateTask(t);
+    if (problems.length) continue; // builder already filters; skip anything the scorer cannot judge
+    t.tokens = countTokens(t.text);
+    t.sha256 = crypto.createHash("sha256").update(t.text).digest("hex").slice(0, 16);
+    tasks.push(t);
+  }
+  const seed = parseInt(crypto.createHash("sha256").update(blob).digest("hex").slice(0, 8), 16) >>> 0;
+  return { split, seed, tasks, source_sha256: crypto.createHash("sha256").update(blob).digest("hex") };
+}
+
 function resolveSeed(split, seed) {
   if (seed != null) return Number(seed) >>> 0;
   if (split === "fresh") return hashSeed("fresh", Date.now()) >>> 0;
@@ -90,6 +122,12 @@ function buildCorpus({
   positions = Object.keys(POSITIONS),
   reps = 1,
 } = {}) {
+  if (String(split).startsWith("real-")) {
+    const real = loadRealSplit(split);
+    if (families) real.tasks = real.tasks.filter((t) => families.includes(t.family));
+    real.tasks = real.tasks.filter((t) => sizes.includes(t.size));
+    return real;
+  }
   const splitSeed = resolveSeed(split, seed);
   const fams = families ? families.map((n) => {
     if (!byName[n]) throw new Error(`unknown family ${n}`);

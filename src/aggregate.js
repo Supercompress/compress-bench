@@ -38,6 +38,13 @@ function summarize(rows, { seed = 1, B = 2000 } = {}) {
     out_of_order: ok.filter((r) => r.in_order === false).length,
     expanded: ok.filter((r) => r.expanded).length,
     untouched: ok.filter((r) => r.tokens_out >= r.tokens_in).length,
+    // Abstention: tasks returned (nearly) whole. Passing input through is always "correct", so a
+    // compressor can buy recall by abstaining. These two numbers make that visible.
+    abstain_rate: ok.length ? ok.filter((r) => r.cut < 0.05).length / ok.length : 0,
+    compressed_recall: (() => {
+      const c = rows.filter((r) => !r.error && r.cut >= 0.05);
+      return c.length ? { ...wilson(c.filter((r) => r.primary_hit).length, c.length), n: c.length } : null;
+    })(),
     ms_p50: quantile(lat, 0.5),
     ms_p95: quantile(lat, 0.95),
   };

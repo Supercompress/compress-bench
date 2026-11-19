@@ -72,6 +72,34 @@ Publication-ready figures live in [`figures/out/`](figures/out/) as SVG, PDF and
 | ![Recall by task family](figures/out/fig3-recall-by-family.png) | ![Robustness by position, phrasing and size](figures/out/fig6-robustness.png) |
 | ![Seed stability](figures/out/fig5-seed-stability.png) | ![Annual savings](figures/out/fig7-annual-savings.png) |
 
+## Real-world splits (anti-overfitting protocol)
+
+The synthetic splits change the seed, not the generator code. A compressor developed against
+these generators can learn their templates, and dev, test and fresh seeds will all agree with it.
+The real splits close that gap: nothing in them is written by us.
+
+| Split | Source | Who may look | Tasks |
+|---|---|---|---:|
+| `real-dev` | [nebius/SWE-agent-trajectories](https://huggingface.co/datasets/nebius/SWE-agent-trajectories) (CC-BY-4.0) | Anyone. Tune on it. Shipped in `data/real/dev.jsonl.gz`. | 193 |
+| `real-test` | Same source, other issues | Nobody by policy. Membership is `sha256(salt + instance_id)`, and `sha256(salt)` was published before any tuning (`data/real/MANIFEST.json`). That proves the split was fixed in advance. It does not hide the data: the source is public, so treat this split as an honesty check, not a vault. | 175 |
+| `real-external` | OpenHands trajectories (a different agent harness, different tool formats) | Nobody. Never tuned on. Local only, not redistributed. This is the real generalisation check: rules that only fit SWE-agent's output formats fail here. | 175 |
+
+**Task construction** (`scripts/build_real_split.py`, deterministic, no LLM labels):
+- **Observation:** one tool output the agent received.
+- **Query:** the agent's own reasoning and command just before it ran the tool.
+- **Golds:** the observation lines that hold a distinctive token which appears in this observation for the first time in the session and that the agent uses in its very next message. Lines whose token reaches the agent's next *command* are primary.
+- One task per issue per family, so tasks stay independent.
+
+**Rules we hold ourselves to.** Tune only on `dev` and `real-dev`. Score `test`, `real-test` and
+`real-external` once per engine version and publish whatever comes out. Read recall together with
+**abstention**, the share of inputs returned with under a 5% cut, and with **recall when it
+compressed**. Passing input through always keeps the answer, so recall alone rewards doing nothing.
+
+```
+node src/cli.js --split real-dev        # public
+node src/cli.js --split real-test       # needs the sealed file (maintainers until reveal)
+```
+
 ## Corpus
 
 14 task families × 3 sizes (≈0.6k–56k tokens) × 3 needle positions (head / middle / tail) ×
