@@ -11,6 +11,7 @@ import { Breakdown, TaskGrid } from "@/sections/Tasks";
 import { Cost } from "@/sections/Cost";
 import { Method, Misses, Seeds } from "@/sections/Rigor";
 import { Cta, Footer, Nav, Reproduce } from "@/sections/Outro";
+import { Figures } from "@/sections/Figures";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ const RAIL = [
   ["seeds", "Seeds"],
   ["method", "Method"],
   ["misses", "Misses"],
+  ["figures", "Figures"],
   ["reproduce", "Reproduce"],
 ] as const;
 
@@ -103,6 +105,7 @@ export default function App() {
         <Seeds />
         <Method />
         <Misses />
+        <Figures />
         <Reproduce />
         <Cta />
       </main>

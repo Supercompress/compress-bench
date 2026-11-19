@@ -27,7 +27,7 @@ export function Reproduce() {
   return (
     <Section
       id="reproduce"
-      n="10"
+      n="11"
       kicker="Reproduce"
       title={
         <>
@@ -43,7 +43,7 @@ export function Reproduce() {
     >
       <div className="grid-2" style={{ alignItems: "start" }}>
         <div data-reveal>
-          <Terminal lines={reproLines()} title="~/compress-bench" height={330} loop={14} />
+          <Terminal lines={reproLines()} title="~/compress-bench" height={250} loop={14} />
         </div>
         <div style={{ display: "grid", gap: 14 }} data-reveal>
           <div className="codeblock">

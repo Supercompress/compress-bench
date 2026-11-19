@@ -136,11 +136,17 @@ export function Breakdown() {
     >
       <div className="card card-pad scroll-x" data-reveal>
         <table className="heat" style={{ minWidth: 820 }}>
+          <colgroup>
+            <col style={{ width: 250 }} />
+            {COLS.map((c) => (
+              <col key={c} />
+            ))}
+          </colgroup>
           <thead>
             <tr>
               <th>family</th>
               {COLS.map((c) => (
-                <th key={c} style={{ textAlign: "center", fontSize: 11.5 }}>
+                <th key={c} style={{ textAlign: "center", fontSize: 11.5, whiteSpace: "normal", lineHeight: 1.25, verticalAlign: "bottom" }}>
                   {label(c)}
                 </th>
               ))}

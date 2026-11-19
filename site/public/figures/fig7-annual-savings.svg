@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="619.2pt" height="331.2pt" viewBox="0 0 619.2 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-18T19:41:18.619339</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2 
+L 619.2 331.2 
+L 619.2 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 154.8 281.52 
+L 526.32 281.52 
+L 526.32 69.552 
+L 154.8 69.552 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 166.631075 281.52 
+L 166.631075 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m2705ae9a7f" d="M 0 0 
+L 0 3.5 
+" style="stroke: #4b5567; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="166.631075" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="166.631075" y="298.0675" transform="rotate(-0 166.631075 298.0675)">−$100k</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 215.37961 281.52 
+L 215.37961 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="215.37961" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="215.37961" y="298.0675" transform="rotate(-0 215.37961 298.0675)">$0</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 264.128146 281.52 
+L 264.128146 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="264.128146" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="264.128146" y="298.0675" transform="rotate(-0 264.128146 298.0675)">$100k</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 312.876682 281.52 
+L 312.876682 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="312.876682" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="312.876682" y="298.0675" transform="rotate(-0 312.876682 298.0675)">$200k</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 361.625217 281.52 
+L 361.625217 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="361.625217" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="361.625217" y="298.0675" transform="rotate(-0 361.625217 298.0675)">$300k</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 410.373753 281.52 
+L 410.373753 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="410.373753" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="410.373753" y="298.0675" transform="rotate(-0 410.373753 298.0675)">$400k</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 459.122289 281.52 
+L 459.122289 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="459.122289" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="459.122289" y="298.0675" transform="rotate(-0 459.122289 298.0675)">$500k</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 507.870824 281.52 
+L 507.870824 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #e3e0da; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m2705ae9a7f" x="507.870824" y="281.52" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="507.870824" y="298.0675" transform="rotate(-0 507.870824 298.0675)">$600k</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="340.56" y="314.4175" transform="rotate(-0 340.56 314.4175)">Saved per year vs. no compression, on Opus 5.5  (line = 95% bootstrap interval)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_17"/>
+     <g id="text_10">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0f1729" x="151.3" y="267.63521" transform="rotate(-0 151.3 267.63521)">Headroom Kompress</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_18"/>
+     <g id="text_11">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0f1729" x="151.3" y="238.526723" transform="rotate(-0 151.3 238.526723)">Caveman Cloud</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_19"/>
+     <g id="text_12">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0f1729" x="151.3" y="209.418237" transform="rotate(-0 151.3 209.418237)">LiteLLM compression</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_20"/>
+     <g id="text_13">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0f1729" x="151.3" y="180.30975" transform="rotate(-0 151.3 180.30975)">SuperCompress API</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_21"/>
+     <g id="text_14">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0f1729" x="151.3" y="151.201263" transform="rotate(-0 151.3 151.201263)">Probe0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_22"/>
+     <g id="text_15">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #0566ff" x="151.3" y="122.092777" transform="rotate(-0 151.3 122.092777)">SuperCompress Fast</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_23"/>
+     <g id="text_16">
+      <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: end; fill: #9aa1ac" x="151.3" y="92.98429" transform="rotate(-0 151.3 92.98429)">BM25 (35%)</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 215.37961 271.885091 
+L 197.280254 271.885091 
+L 197.280254 253.837829 
+L 215.37961 253.837829 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #b42318; opacity: 0.9"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 215.37961 242.776604 
+L 215.37961 242.776604 
+L 215.37961 224.729342 
+L 215.37961 224.729342 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #6b7280; opacity: 0.9"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 215.37961 213.668118 
+L 284.050697 213.668118 
+L 284.050697 195.620856 
+L 215.37961 195.620856 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #4b5563; opacity: 0.9"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 215.37961 184.559631 
+L 290.602501 184.559631 
+L 290.602501 166.512369 
+L 215.37961 166.512369 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #7fa9ff; opacity: 0.9"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 215.37961 155.451144 
+L 397.765432 155.451144 
+L 397.765432 137.403882 
+L 215.37961 137.403882 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #0f1729; opacity: 0.9"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 215.37961 126.342658 
+L 422.539437 126.342658 
+L 422.539437 108.295396 
+L 215.37961 108.295396 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #0566ff; opacity: 0.9"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 215.37961 97.234171 
+L 450.138908 97.234171 
+L 450.138908 79.186909 
+L 215.37961 79.186909 
+z
+" clip-path="url(#p1520946ee8)" style="fill: #9aa1ac; opacity: 0.55"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 176.027842 262.86146 
+L 213.250274 262.86146 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_25">
+    <path d="M 215.37961 233.752973 
+L 215.37961 233.752973 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_26">
+    <path d="M 220.006821 204.644487 
+L 344.327287 204.644487 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 171.687273 175.536 
+L 406.528468 175.536 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_28">
+    <path d="M 328.684857 146.427513 
+L 463.652002 146.427513 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_29">
+    <path d="M 356.325276 117.319027 
+L 485.068209 117.319027 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_30">
+    <path d="M 390.108012 88.21054 
+L 509.432727 88.21054 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-opacity: 0.55; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_31">
+    <path d="M 215.37961 281.52 
+L 215.37961 69.552 
+" clip-path="url(#p1520946ee8)" style="fill: none; stroke: #0f1729; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 154.8 281.52 
+L 526.32 281.52 
+" style="fill: none; stroke: #0f1729; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #b42318" x="533.7504" y="266.05646" transform="rotate(-0 533.7504 266.05646)">−$37k</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="236.947973" transform="rotate(-0 533.7504 236.947973)">$0</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="207.839487" transform="rotate(-0 533.7504 207.839487)">$141k</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="178.731" transform="rotate(-0 533.7504 178.731)">$154k</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="149.622513" transform="rotate(-0 533.7504 149.622513)">$374k</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="120.514027" transform="rotate(-0 533.7504 120.514027)">$425k</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="533.7504" y="91.40554" transform="rotate(-0 533.7504 91.40554)">$482k</text>
+   </g>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 14px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="7.4304" y="21.27" transform="rotate(-0 7.4304 21.27)">Annual savings at 10B tool tokens a month, enterprise scale</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 9.5px; font-family: 'Geist'; text-anchor: start; fill: #4b5567" x="7.4304" y="42.04375" transform="rotate(-0 7.4304 42.04375)">Tool tokens priced as one cache write (1.25× input) plus 10 cache re-reads at Opus 5.5 list price. Misses pay a raw re-read. Vendor fees excluded.</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 7px; font-family: 'Geist Mono'; text-anchor: start; fill: #9aa1ac" x="7.4304" y="325.1606" transform="rotate(-0 7.4304 325.1606)">compress-bench · prices as of 2026-11-03 · scenario: ≈500 engineers, same usage · linear projection of the test split</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1520946ee8">
+   <rect x="154.8" y="69.552" width="371.52" height="211.968"/>
+  </clipPath>
+ </defs>
+</svg>

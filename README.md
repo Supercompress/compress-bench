@@ -60,6 +60,18 @@ Node ≥ 20, no dependencies. `js-tiktoken` (o200k_base) is used when resolvable
 `node_modules` or `$BENCH_DEPS/node_modules`; otherwise a chars/4 estimate is used and the report
 says so.
 
+## Figures
+
+Publication-ready figures live in [`figures/out/`](figures/out/) as SVG, PDF and 2× PNG. Each one states its sample size, interval method and bench commit. Rebuild them from the site data with `python3 figures/make_figures.py`, which needs matplotlib. The Geist fonts (OFL) are in `figures/fonts/`.
+
+![Recall vs. cut against the BM25 frontier](figures/out/fig1-recall-vs-cut.png)
+
+| | |
+|---|---|
+| ![Primary recall forest plot](figures/out/fig2-recall-forest.png) | ![Recovery-adjusted cut](figures/out/fig4-recovery-adjusted-cut.png) |
+| ![Recall by task family](figures/out/fig3-recall-by-family.png) | ![Robustness by position, phrasing and size](figures/out/fig6-robustness.png) |
+| ![Seed stability](figures/out/fig5-seed-stability.png) | ![Annual savings](figures/out/fig7-annual-savings.png) |
+
 ## Corpus
 
 14 task families × 3 sizes (≈0.6k–56k tokens) × 3 needle positions (head / middle / tail) ×

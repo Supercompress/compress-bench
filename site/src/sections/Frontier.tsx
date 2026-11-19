@@ -3,6 +3,12 @@ import { FillPattern } from "@/lib/dither";
 import { Section } from "@/components/Section";
 import { arms, frontier, label, pct, pp, ranked } from "@/data/bench";
 
+const REF_OFFSET: Record<string, [number, number, "start" | "end"]> = {
+  "truncate-head-35": [9, -6, "start"],
+  "truncate-tail-35": [9, 14, "start"],
+  "random-lines-35": [-9, 4, "end"],
+};
+
 const W = 920;
 const H = 540;
 const M = { l: 56, r: 24, t: 20, b: 48 };
@@ -84,9 +90,15 @@ export function Frontier() {
           {refs.map((a) => (
             <g key={a.name} opacity={hover && hover !== a.name ? 0.3 : 1} onMouseEnter={() => setHover(a.name)} onMouseLeave={() => setHover(null)}>
               <circle cx={X(a.summary.cut.est)} cy={Y(a.summary.primary.p)} r={5} fill="#fff" stroke="#8a909c" strokeWidth={1.5} />
-              <text x={X(a.summary.cut.est) + 9} y={Y(a.summary.primary.p) + 4} style={{ fontSize: 10 }}>
-                {a.name}
-              </text>
+              {(() => {
+                // Head, tail and random sit within a few px of each other; fan their labels out.
+                const [dx, dy, anchor] = REF_OFFSET[a.name] ?? [9, 4, "start"];
+                return (
+                  <text x={X(a.summary.cut.est) + dx} y={Y(a.summary.primary.p) + dy} textAnchor={anchor} style={{ fontSize: 10 }}>
+                    {label(a.name)}
+                  </text>
+                );
+              })()}
             </g>
           ))}
           {ranked.map((a) => {

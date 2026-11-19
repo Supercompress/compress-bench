@@ -737,6 +737,7 @@ a {
 
 .heat {
   width: 100%;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 3px;
   font-size: 12.5px;
@@ -946,5 +947,89 @@ body {
   }
   .logview-head {
     font-size: 10.5px;
+  }
+}
+
+/* ---------------------------------------------------------------- figures */
+.fig-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.fig-card {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fig-wide {
+  grid-column: 1 / -1;
+}
+.fig-img {
+  display: block;
+  background: #fff;
+  border-bottom: 1px solid var(--line, #e8e4dd);
+  padding: 18px 18px 10px;
+  cursor: zoom-in;
+}
+.fig-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.fig-wide .fig-img {
+  padding: 28px 12% 14px;
+}
+.fig-card figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px 20px;
+  margin-top: auto;
+}
+.fig-title {
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-top: 4px;
+}
+.fig-note {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 6px 0 0;
+  max-width: 60ch;
+}
+.fig-dl {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.fig-dl a {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 1px solid #dedfe3;
+  background: linear-gradient(#fff, #fafafb);
+  color: #343740;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.fig-dl a:hover {
+  border-color: #0566ff;
+  color: #0566ff;
+}
+@media (max-width: 860px) {
+  .fig-grid {
+    grid-template-columns: 1fr;
+  }
+  .fig-wide .fig-img {
+    padding: 18px;
+  }
+  .fig-card figcaption {
+    flex-direction: column;
   }
 }

@@ -84,7 +84,7 @@ export function Hero() {
           </div>
         </div>
         <div className="reveal-hero">
-          <Terminal lines={script()} title="compress-bench — test split" height={440} />
+          <Terminal lines={script()} title="compress-bench — test split" height={300} />
           <p className="small" style={{ marginTop: 12 }}>
             Replayed from <span className="mono">results/results.json</span>, drawn with asciicn. Bars show the share of tasks whose primary evidence survived.
           </p>
