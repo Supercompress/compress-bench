@@ -121,6 +121,45 @@ const seedTable = seeds.map(([split, res]) => ({
   ),
 }));
 
+// --------------------------------------------------------------- real-world splits
+// Tool outputs from real agent runs. Sealed splits ship scores only (no task ids), so this block
+// keeps per-arm aggregates and per-family recall and nothing else.
+const REAL = [
+  ["real-dev", "Public dev", "SWE-agent, public. Tuning allowed."],
+  ["real-test", "Sealed test", "SWE-agent, sealed by salted hash. Never tuned on."],
+  ["real-external", "External harness", "OpenHands, a different agent. The generalisation gate."],
+];
+const realArms = ["supercompress-fast", "probe0-tool-compact", "bm25-35", "bm25-50", "bm25-70", "bm25-90", "truncate-tail-35", "truncate-head-35", "random-lines-35"];
+const real = REAL.filter(([d]) => fs.existsSync(path.join(ROOT, `results-${d}`, "results.json"))).map(([d, label, note]) => {
+  const res = read(`results-${d}`);
+  return {
+    split: d,
+    label,
+    note,
+    n: res.meta.n_tasks,
+    sealed: Boolean(res.meta.sealed),
+    bench_sha: res.meta.bench_sha,
+    families: Object.fromEntries(Object.entries(res.arms[0].by_family).map(([k, v]) => [k, v.n])),
+    arms: realArms
+      .map((n) => res.arms.find((a) => a.name === n))
+      .filter(Boolean)
+      .map((a) => {
+        const s = a.summary;
+        const cr = s.compressed_recall || {};
+        return {
+          name: a.name,
+          provenance: a.provenance,
+          primary: { p: r3(s.primary.p), lo: r3(s.primary.lo), hi: r3(s.primary.hi) },
+          cut: { est: r3(s.cut.est), lo: r3(s.cut.lo), hi: r3(s.cut.hi) },
+          eff_cut: { est: r3(s.eff_cut.est), lo: r3(s.eff_cut.lo), hi: r3(s.eff_cut.hi) },
+          abstain: r3(s.abstain_rate),
+          compressed: cr.n ? { p: r3(cr.p), lo: r3(cr.lo), hi: r3(cr.hi), n: cr.n } : null,
+          by_family: Object.fromEntries(Object.entries(a.by_family).map(([k, v]) => [k, { n: v.n, primary: r3(v.primary), cut: r3(v.cut) }])),
+        };
+      }),
+  };
+});
+
 // --------------------------------------------------------------- the guided-scroll example
 function keptMask(input, output) {
   const lines = input.split("\n");
@@ -195,6 +234,7 @@ async function example(prev) {
     skipped: test.skipped,
     grid,
     seeds: seedTable,
+    real,
     example: await example(prev),
     marker: MARK(0).replace("0", "N"),
   };

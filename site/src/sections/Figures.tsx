@@ -50,6 +50,13 @@ const FIGS: Fig[] = [
     title: "Annual savings at enterprise scale",
     note: "10B tool tokens a month on Opus 5.5 list prices, using the recovery-adjusted cut.",
   },
+  {
+    id: "fig8-real-world",
+    n: "Figure 8",
+    title: "Real agent output, with passthrough removed",
+    note: "Recall on every task against recall on only the tasks each arm cut, on SWE-agent dev, the sealed test split and OpenHands.",
+    wide: true,
+  },
 ];
 
 const BIBTEX = `@misc{compressbench2026,
@@ -97,7 +104,7 @@ export function Figures() {
   return (
     <Section
       id="figures"
-      n="10"
+      n="11"
       kicker="Figures"
       title={
         <>

@@ -9,7 +9,7 @@ export function Seeds() {
   return (
     <Section
       id="seeds"
-      n="07"
+      n="08"
       kicker="Seeds"
       title={
         <>
@@ -19,7 +19,7 @@ export function Seeds() {
       lede={
         <>
           A benchmark its author tunes against is worthless. The corpus generator was developed on the dev seed, scored once on the held-out test seed, then re-run on a fresh seed drawn from the clock after the code was frozen. Local arms ran all{" "}
-          {meta.n_corpus} tasks of each split.
+          {meta.n_corpus} tasks of each split. Seeds share generator code, though, so they cannot catch a compressor that learned the templates. That is what the <a href="#real">real-world splits</a> are for.
         </>
       }
     >
@@ -77,7 +77,7 @@ export function Method() {
   return (
     <Section
       id="method"
-      n="08"
+      n="09"
       kicker="Method"
       title={
         <>
@@ -218,7 +218,7 @@ export function Misses() {
   return (
     <Section
       id="misses"
-      n="09"
+      n="10"
       kicker="Misses"
       title={
         <>

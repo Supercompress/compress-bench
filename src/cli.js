@@ -65,6 +65,19 @@ function parseArgs(argv) {
   return a;
 }
 
+// Sealed splits publish scores only. Task ids name the held-out issues and gold text would hand
+// them over, so both are replaced before anything is written next to the repo.
+const SEALED = new Set(["real-test", "real-external"]);
+function seal(out) {
+  out.meta.sealed = true;
+  for (const a of out.arms) {
+    a.rows = a.rows.map((r, i) => {
+      const { id, golds_missing, novel_samples, out_sha, ...rest } = r;
+      return { ...rest, id: `sealed.${crypto.createHash("sha256").update(id).digest("hex").slice(0, 10)}`, golds_missing: [], novel_samples: [] };
+    });
+  }
+}
+
 function benchSha() {
   try {
     const dirty = execSync("git status --porcelain -- .", { cwd: __dirname, stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
@@ -201,6 +214,7 @@ async function main(argv = process.argv.slice(2)) {
     tiers: tierList,
     skipped,
   };
+  if (SEALED.has(corpus.split)) seal(out);
   fs.mkdirSync(args.out, { recursive: true });
   fs.writeFileSync(path.join(args.out, "results.json"), JSON.stringify(out, null, 1));
   fs.writeFileSync(path.join(args.out, "REPORT.md"), render(out));

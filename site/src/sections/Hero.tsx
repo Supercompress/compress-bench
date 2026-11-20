@@ -51,7 +51,7 @@ export function Hero() {
           </h1>
           <p className="lede">
             Coding agents read more tool output than anything else, and every compressor claims to cut it. compress-bench checks the part that matters: after the cut, is the{" "}
-            <SprayUnderline>evidence still there</SprayUnderline>? {num(meta.n_corpus)} seeded tasks, 14 families, held-out and fresh seeds, paired significance tests, priced at enterprise scale.
+            <SprayUnderline>evidence still there</SprayUnderline>? {num(meta.n_corpus)} seeded tasks, 14 families, held-out and fresh seeds, paired significance tests, priced at enterprise scale, then checked against tool output from real agent runs.
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <a className="btn btn-primary" href="#story">
@@ -67,16 +67,16 @@ export function Hero() {
           <div className="stats tnum">
             <div>
               <b>{pct(fast.summary.primary.p)}</b>
-              <span>answers kept by {label(fast.name)}</span>
+              <span>answers kept by {label(fast.name)}, synthetic tasks</span>
             </div>
             <div>
               <b>{num(meta.n_corpus)}</b>
               <span>tasks per split, 3 seeds</span>
             </div>
-            <div>
-              <b>{(meta.corpus_tokens / 1e6).toFixed(2)}M</b>
-              <span>tokens per split ({meta.tokenizer})</span>
-            </div>
+            <a href="#real" style={{ color: "inherit", textDecoration: "none" }}>
+              <b>{num(bench.real.reduce((s, r) => s + r.n, 0))}</b>
+              <span>real agent tasks, including a sealed split</span>
+            </a>
             <div>
               <b>{bench.tiers.order.length}</b>
               <span>products, 11 reference arms</span>

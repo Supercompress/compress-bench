@@ -43,7 +43,7 @@ export function Frontier() {
   return (
     <Section
       id="frontier"
-      n="03"
+      n="04"
       kicker="Frontier"
       title={
         <>

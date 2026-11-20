@@ -12,6 +12,7 @@ import { Cost } from "@/sections/Cost";
 import { Method, Misses, Seeds } from "@/sections/Rigor";
 import { Cta, Footer, Nav, Reproduce } from "@/sections/Outro";
 import { Figures } from "@/sections/Figures";
+import { RealWorld } from "@/sections/RealWorld";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ const RAIL = [
   ["top", "Intro"],
   ["story", "Walkthrough"],
   ["leaderboard", "Leaderboard"],
+  ["real", "Real world"],
   ["frontier", "Frontier"],
   ["tasks", "Every task"],
   ["families", "Breakdown"],
@@ -98,6 +100,7 @@ export default function App() {
         <Hero />
         <Story />
         <Leaderboard />
+        <RealWorld />
         <Frontier />
         <TaskGrid />
         <Breakdown />

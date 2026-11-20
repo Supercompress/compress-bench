@@ -24,7 +24,7 @@ export function Cost() {
   return (
     <Section
       id="cost"
-      n="06"
+      n="07"
       kicker="Cost"
       title={
         <>

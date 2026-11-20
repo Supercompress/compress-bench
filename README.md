@@ -12,7 +12,8 @@ compressors which rewrite text instead of selecting it.
 
 **Interactive write-up:** https://supercompress.github.io/compress-bench/ walks through one task
 step by step, then shows the leaderboard, the BM25 frontier, every per-task result, the cost
-calculator, seed stability, and every miss.
+calculator, seed stability, every miss, and the [real-world check](#real-world-splits-anti-overfitting-protocol)
+on tool output from real agent runs, where our own engine scores far lower.
 
 ## Results (held-out test split)
 
@@ -72,6 +73,8 @@ Publication-ready figures live in [`figures/out/`](figures/out/) as SVG, PDF and
 | ![Recall by task family](figures/out/fig3-recall-by-family.png) | ![Robustness by position, phrasing and size](figures/out/fig6-robustness.png) |
 | ![Seed stability](figures/out/fig5-seed-stability.png) | ![Annual savings](figures/out/fig7-annual-savings.png) |
 
+![Real agent output, with passthrough removed](figures/out/fig8-real-world.png)
+
 ## Real-world splits (anti-overfitting protocol)
 
 The synthetic splits change the seed, not the generator code. A compressor developed against
@@ -99,6 +102,36 @@ compressed**. Passing input through always keeps the answer, so recall alone rew
 node src/cli.js --split real-dev        # public
 node src/cli.js --split real-test       # needs the sealed file (maintainers until reveal)
 ```
+
+### Real-world results
+
+Same 35% budget, local arms on every task. Read the passthrough column first.
+
+| Split | Arm | Primary recall | Passthrough | Recall when it compressed | Cut | Recovery-adjusted cut |
+|---|---|---|---:|---|---:|---:|
+| `real-dev` | `supercompress-fast` | 69.9% (63–76) | 35.2% | 54.4% (n=125) | 53.4% | 14.6% |
+| `real-dev` | `probe0-tool-compact` | 93.8% (89–96) | 85.0% | 58.6% (n=29) | 35.7% | 9.1% |
+| `real-dev` | `bm25-50` | 43.5% (37–51) | 0.0% | 43.5% (n=193) | 53.3% | −15.5% |
+| `real-dev` | `truncate-tail-35` | 33.2% (27–40) | 0.0% | 33.2% (n=193) | 65.8% | 8.1% |
+| `real-test` | `supercompress-fast` | 68.6% (61–75) | 39.4% | 48.1% (n=106) | 43.0% | 13.4% |
+| `real-test` | `probe0-tool-compact` | 96.0% (92–98) | 85.1% | 73.1% (n=26) | 33.3% | 15.5% |
+| `real-test` | `bm25-50` | 40.0% (33–47) | 0.0% | 40.0% (n=175) | 55.0% | −14.1% |
+| `real-test` | `truncate-tail-35` | 36.6% (30–44) | 0.0% | 36.6% (n=175) | 66.0% | 7.8% |
+| `real-external` | `supercompress-fast` | 57.7% (50–65) | 42.3% | 26.7% (n=101) | 56.5% | 2.6% |
+| `real-external` | `probe0-tool-compact` | 64.0% (57–71) | 40.0% | 40.0% (n=105) | 59.7% | 3.2% |
+| `real-external` | `bm25-50` | 42.3% (35–50) | 0.0% | 42.3% (n=175) | 54.5% | −16.7% |
+| `real-external` | `truncate-tail-35` | 38.9% (32–46) | 0.0% | 38.9% (n=175) | 66.0% | −8.9% |
+
+What this shows, including where it hurts us:
+
+- **The synthetic score does not transfer.** `supercompress-fast` keeps 93% of answers on synthetic tasks it cuts, but 54% on real-dev, 48% on sealed real-test and 27% on OpenHands.
+- **Probe0's real-world recall is mostly passthrough.** On SWE-agent output it returns 85% of inputs unchanged. On the inputs it does cut, it keeps 59–73%, ahead of us, though on only 26–29 tasks, so its intervals are wide.
+- **Nobody generalises across harnesses yet.** On OpenHands both products sit near or below the BM25 line once passthrough is removed. That split is the number a compressor has to win.
+
+`supercompress-fast` here is the engine after a structure-aware pass (test verdicts, search-hit lists, enclosing code blocks), developed on real-dev only. Against the same engine without that pass, recall when it compressed went from 29.0% to 48.1% on sealed real-test and from 21.8% to 26.7% on real-external. Synthetic results did not change.
+
+Sealed splits (`real-test`, `real-external`) are published as scores only: `results-real-*/` replace task ids with hashes and drop gold text.
+
 
 ## Corpus
 

@@ -26,7 +26,7 @@ export function TaskGrid() {
   return (
     <Section
       id="tasks"
-      n="04"
+      n="05"
       kicker="Every task"
       title={
         <>
@@ -124,7 +124,7 @@ export function Breakdown() {
   return (
     <Section
       id="families"
-      n="05"
+      n="06"
       kicker="Where it breaks"
       title={
         <>

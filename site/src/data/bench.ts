@@ -39,6 +39,17 @@ export type Arm = {
   by_style: Break;
   misses: { id: string; family: string; missing: string[]; error: string | null; cut: number }[];
 };
+export type RealArm = {
+  name: string;
+  provenance: Record<string, string>;
+  primary: { p: number; lo: number; hi: number };
+  cut: { est: number; lo: number; hi: number };
+  eff_cut: { est: number; lo: number; hi: number };
+  abstain: number;
+  compressed: { p: number; lo: number; hi: number; n: number } | null;
+  by_family: Record<string, { n: number; primary: number; cut: number }>;
+};
+export type RealSplit = { split: string; label: string; note: string; n: number; sealed: boolean; bench_sha: string; families: Record<string, number>; arms: RealArm[] };
 export type Model = { id: string; name: string; input: number; cacheRead: number; assumed?: string };
 export type Scenario = { id: string; name: string; tokensPerMonth: number; note: string };
 
@@ -76,6 +87,7 @@ type Bench = {
     hit: number[][];
     cut: number[][];
   };
+  real: RealSplit[];
   seeds: { split: string; seed: number; arms: Record<string, { n: number; primary: number; cut: number; eff_cut: number }> }[];
   example: {
     id: string;

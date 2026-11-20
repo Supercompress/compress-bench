@@ -468,6 +468,66 @@ def fig_cost():
            f"compress-bench · prices as of {meta['prices_as_of']} · scenario: {scen['note']} · linear projection of the test split")
 
 
+# ------------------------------------------------------------------ fig 8: real-world splits
+def fig_real():
+    real = bench.get("real") or []
+    if not real:
+        return
+    fig = plt.figure(figsize=(8.6, 4.9))
+    w = 0.86 / len(real)
+    for i, sp in enumerate(real):
+        ax = fig.add_axes([0.075 + i * w, 0.2, w - 0.035, 0.56])
+        A = {a["name"]: a for a in sp["arms"]}
+        bm = sorted((A[n] for n in A if n.startswith("bm25-")), key=lambda a: a["cut"]["est"])
+        ax.plot([a["cut"]["est"] for a in bm], [a["primary"]["p"] for a in bm], color=FAINT, lw=1, ls="--",
+                marker="o", ms=3, mfc="white", mec=FAINT, zorder=1)
+        for n in ("probe0-tool-compact", "supercompress-fast"):
+            a = A.get(n)
+            if not a:
+                continue
+            c = STYLE[n]["c"]
+            m = STYLE[n]["m"]
+            x = a["cut"]["est"]
+            hi_y = a["primary"]["p"]
+            lo_y = a["compressed"]["p"] if a["compressed"] else None
+            ax.plot([x, x], [a["primary"]["lo"], a["primary"]["hi"]], color=c, lw=0.8, alpha=0.45)
+            ax.plot([x], [hi_y], marker=m, ms=6.5, mfc="white", mec=c, mew=1.3, zorder=3)
+            if lo_y is not None:
+                ax.annotate("", xy=(x, lo_y), xytext=(x, hi_y - 0.015),
+                            arrowprops=dict(arrowstyle="-|>", color=c, lw=1.1, shrinkA=0, shrinkB=3, mutation_scale=8))
+                ax.plot([x], [lo_y], marker=m, ms=6.5, color=c, zorder=3)
+        ax.set_xlim(0.15, 0.95)
+        ax.set_ylim(0, 1.04)
+        pct_axis(ax)
+        pct_axis(ax, "x")
+        grid_y(ax)
+        ax.tick_params(labelsize=7.5)
+        ax.set_title(f"{sp['label']} · n = {sp['n']}", fontsize=9, color=INK, loc="left", pad=16)
+        pt = "   ".join(f"{label(n).replace('SuperCompress ', '')} {A[n]['abstain'] * 100:.0f}%" for n in ("supercompress-fast", "probe0-tool-compact") if n in A)
+        ax.text(0, 1.015, f"passthrough: {pt}", transform=ax.transAxes, fontsize=7, color=MUTED, va="bottom", ha="left")
+        if i == 0:
+            ax.set_ylabel("Primary recall")
+        else:
+            ax.set_yticklabels([])
+        ax.set_xlabel("Cut (all inputs)", fontsize=8)
+        for side in ("right", "top"):
+            ax.spines[side].set_visible(False)
+    from matplotlib.lines import Line2D
+    handles = [
+        Line2D([], [], color=BLUE, marker="o", ls="", ms=6, label="SuperCompress Fast"),
+        Line2D([], [], color=INK, marker="D", ls="", ms=5.5, label="Probe0"),
+        Line2D([], [], color=MUTED, marker="o", ls="", ms=6, mfc="white", label="recall, all tasks"),
+        Line2D([], [], color=MUTED, marker="o", ls="", ms=6, label="recall, tasks it actually cut"),
+        Line2D([], [], color=FAINT, ls="--", marker="o", ms=3, mfc="white", label="BM25 at 35-90% budgets"),
+    ]
+    fig.legend(handles=handles, loc="lower center", ncol=5, fontsize=7.6, frameon=False, bbox_to_anchor=(0.5, 0.035),
+               handletextpad=0.4, columnspacing=1.4)
+    finish(fig, "fig8-real-world",
+           "Real agent tool output: recall falls once passthrough is removed",
+           "Arrows run from recall on every task to recall on only the tasks each arm cut. Passthrough = returned with under 5% cut.",
+           f"compress-bench · real splits: SWE-agent (CC-BY-4.0) and OpenHands · gold = lines the agent used next · 95% Wilson CIs · bench {real[0]['bench_sha'].split('+')[0]}")
+
+
 # ------------------------------------------------------------------ social card (16:9)
 def fig_card():
     fig = plt.figure(figsize=(12, 6.75))
@@ -535,4 +595,5 @@ if __name__ == "__main__":
     fig_seeds()
     fig_robustness()
     fig_cost()
+    fig_real()
     fig_card()

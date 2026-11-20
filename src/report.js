@@ -135,6 +135,7 @@ function render(res) {
     const byFam = {};
     for (const r of miss) byFam[r.family] = (byFam[r.family] || 0) + 1;
     L.push(`- **${a.name}** (${miss.length}): ${Object.entries(byFam).sort((x, y) => y[1] - x[1]).map(([f, n]) => `${f} ×${n}`).join(", ")}`);
+    if (m.sealed) continue; // sealed split: no task ids or gold text
     for (const r of miss.slice(0, 4)) L.push(`  - \`${r.id}\`${r.error ? ` error: ${r.error.slice(0, 120)}` : ` missing: ${r.golds_missing.slice(0, 2).map((g) => `\`${g.slice(0, 70)}\``).join(", ")}`}`);
   }
 
