@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="486pt" viewBox="0 0 864 486" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-19T20:21:58.939031</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 486 
+L 864 486 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 172.8 403.38 
+L 786.24 403.38 
+L 786.24 121.5 
+L 172.8 121.5 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 172.8 134.312727 
+L 445.44 134.312727 
+L 445.44 154.003578 
+L 172.8 154.003578 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 445.44 134.312727 
+L 786.24 134.312727 
+L 786.24 154.003578 
+L 445.44 154.003578 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 172.8 161.661131 
+L 353.686154 161.661131 
+L 353.686154 181.351982 
+L 172.8 181.351982 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 353.686154 161.661131 
+L 786.24 161.661131 
+L 786.24 181.351982 
+L 353.686154 181.351982 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 172.8 204.051157 
+L 388.914912 204.051157 
+L 388.914912 223.742008 
+L 172.8 223.742008 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 388.914912 204.051157 
+L 786.24 204.051157 
+L 786.24 223.742008 
+L 388.914912 223.742008 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 172.8 231.399561 
+L 694.039968 231.399561 
+L 694.039968 251.090412 
+L 172.8 251.090412 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 694.039968 231.399561 
+L 786.24 231.399561 
+L 786.24 251.090412 
+L 694.039968 251.090412 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 172.8 273.789588 
+L 414.679392 273.789588 
+L 414.679392 293.480439 
+L 172.8 293.480439 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 414.679392 273.789588 
+L 786.24 273.789588 
+L 786.24 293.480439 
+L 414.679392 293.480439 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 172.8 301.137992 
+L 695.082816 301.137992 
+L 695.082816 320.828843 
+L 172.8 320.828843 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 695.082816 301.137992 
+L 786.24 301.137992 
+L 786.24 320.828843 
+L 695.082816 320.828843 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 172.8 343.528018 
+L 432.223776 343.528018 
+L 432.223776 363.218869 
+L 172.8 363.218869 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 432.223776 343.528018 
+L 786.24 343.528018 
+L 786.24 363.218869 
+L 432.223776 363.218869 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 172.8 370.876422 
+L 418.176 370.876422 
+L 418.176 390.567273 
+L 172.8 390.567273 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 418.176 370.876422 
+L 786.24 370.876422 
+L 786.24 390.567273 
+L 418.176 390.567273 
+z
+" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m42896f869a" d="M 0 0 
+L 0 3.5 
+" style="stroke: #4b5567; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m42896f869a" x="172.8" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="172.8" y="420.43" transform="rotate(-0 172.8 420.43)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m42896f869a" x="295.488" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="295.488" y="420.43" transform="rotate(-0 295.488 420.43)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m42896f869a" x="418.176" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="418.176" y="420.43" transform="rotate(-0 418.176 420.43)">40%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m42896f869a" x="540.864" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="540.864" y="420.43" transform="rotate(-0 540.864 420.43)">60%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m42896f869a" x="663.552" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="663.552" y="420.43" transform="rotate(-0 663.552 420.43)">80%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m42896f869a" x="786.24" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #4b5567" x="786.24" y="420.43" transform="rotate(-0 786.24 420.43)">100%</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 11px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="479.52" y="438.435" transform="rotate(-0 479.52 438.435)">Share of inputs: light = returned unchanged, solid = actually compressed</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="149.434403" transform="rotate(-0 169.3 149.434403)">Synthetic test · Fast</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="176.782807" transform="rotate(-0 169.3 176.782807)">Synthetic test · Probe0</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_10">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="219.172833" transform="rotate(-0 169.3 219.172833)">Public dev · Fast</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10"/>
+     <g id="text_11">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="246.521237" transform="rotate(-0 169.3 246.521237)">Public dev · Probe0</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11"/>
+     <g id="text_12">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="288.911263" transform="rotate(-0 169.3 288.911263)">Sealed test · Fast</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12"/>
+     <g id="text_13">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="316.259667" transform="rotate(-0 169.3 316.259667)">Sealed test · Probe0</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_13"/>
+     <g id="text_14">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="358.649693" transform="rotate(-0 169.3 358.649693)">External harness · Fast</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_14"/>
+     <g id="text_15">
+      <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: end; fill: #4b5567" x="169.3" y="385.998097" transform="rotate(-0 169.3 385.998097)">External harness · Probe0</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_19">
+    <path d="M 172.8 403.38 
+L 786.24 403.38 
+" style="fill: none; stroke: #0f1729; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="309.12" y="147.708153" transform="rotate(-0 309.12 147.708153)">44% unchanged</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="615.84" y="147.885653" transform="rotate(-0 615.84 147.885653)">cut: keeps 93%</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="148.418153" transform="rotate(-0 795.4416 148.418153)">96%</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="263.243077" y="175.056557" transform="rotate(-0 263.243077 175.056557)">29% unchanged</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="569.963077" y="175.234057" transform="rotate(-0 569.963077 175.234057)">cut: keeps 63%</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="175.766557" transform="rotate(-0 795.4416 175.766557)">74%</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="280.857456" y="217.446583" transform="rotate(-0 280.857456 217.446583)">35% unchanged</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="587.577456" y="217.624083" transform="rotate(-0 587.577456 217.624083)">cut: keeps 54%</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="218.156583" transform="rotate(-0 795.4416 218.156583)">70%</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="433.419984" y="244.794987" transform="rotate(-0 433.419984 244.794987)">85% unchanged</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="740.139984" y="244.972487" transform="rotate(-0 740.139984 244.972487)">cut: keeps 59%</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="245.504987" transform="rotate(-0 795.4416 245.504987)">94%</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="293.739696" y="287.185013" transform="rotate(-0 293.739696 287.185013)">39% unchanged</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="600.459696" y="287.362513" transform="rotate(-0 600.459696 287.362513)">cut: keeps 48%</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="287.895013" transform="rotate(-0 795.4416 287.895013)">69%</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="433.941408" y="314.533417" transform="rotate(-0 433.941408 314.533417)">85% unchanged</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="740.661408" y="314.710917" transform="rotate(-0 740.661408 314.710917)">cut: keeps 73%</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="315.243417" transform="rotate(-0 795.4416 315.243417)">96%</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="302.511888" y="356.923443" transform="rotate(-0 302.511888 356.923443)">42% unchanged</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="609.231888" y="357.100943" transform="rotate(-0 609.231888 357.100943)">cut: keeps 27%</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="357.633443" transform="rotate(-0 795.4416 357.633443)">58%</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="295.488" y="384.271847" transform="rotate(-0 295.488 384.271847)">40% unchanged</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="602.208" y="384.449347" transform="rotate(-0 602.208 384.449347)">cut: keeps 40%</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="384.981847" transform="rotate(-0 795.4416 384.981847)">64%</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 9.5px; font-family: 'Geist'; fill: #4b5567" transform="translate(795.4416 100.634394)">headline</text>
+    <text style="font-size: 9.5px; font-family: 'Geist'; fill: #4b5567" transform="translate(795.4416 115.449941)">recall</text>
+   </g>
+  </g>
+  <g id="text_41">
+   <text style="font-size: 25px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="60.48" y="59.145" transform="rotate(-0 60.48 59.145)">Returning the input unchanged scores 100%.</text>
+  </g>
+  <g id="text_42">
+   <text style="font-size: 12.5px; font-family: 'Geist'; text-anchor: start; fill: #4b5567" x="60.48" y="83.0325" transform="rotate(-0 60.48 83.0325)">So every compressor’s recall needs its passthrough rate next to it. Here is ours and Probe0’s, on each split.</text>
+  </g>
+  <g id="text_43">
+   <text style="font-size: 10px; font-family: 'Geist Mono'; text-anchor: start; fill: #9aa1ac" x="60.48" y="468.99" transform="rotate(-0 60.48 468.99)">compress-bench · passthrough = cut under 5% · ‘keeps’ = primary recall on compressed inputs · supercompress.github.io/compress-bench</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p17eb53e07a">
+   <rect x="172.8" y="121.5" width="613.44" height="281.88"/>
+  </clipPath>
+ </defs>
+</svg>

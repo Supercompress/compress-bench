@@ -44,6 +44,7 @@ BLUE_2 = "#7fa9ff"
 RED = "#b42318"
 GREEN = "#0a7d4f"
 PAPER = "#ffffff"
+PAPER_WASH = "#f7f5f2"
 
 plt.rcParams.update(
     {
@@ -587,6 +588,136 @@ def fig_card():
     print("wrote card-headline, og.png")
 
 
+# ------------------------------------------------------------------ social cards for the real-world results
+def _save_card(fig, name):
+    OUT.mkdir(parents=True, exist_ok=True)
+    for ext in ("svg", "png", "pdf"):
+        fig.savefig(OUT / f"{name}.{ext}", **({"dpi": 160} if ext == "png" else {}))
+        shutil.copy(OUT / f"{name}.{ext}", SITE / f"{name}.{ext}")
+    plt.close(fig)
+    print("wrote", name)
+
+
+def _real_stages():
+    synth_path = ROOT / "figures" / "synthetic-compressed.json"
+    real = bench.get("real") or []
+    if not real or not synth_path.exists():
+        return None
+    synth = json.loads(synth_path.read_text())
+    stages = [("Synthetic\ntest", synth["arms"], synth["n"])]
+    for sp in real:
+        stages.append((sp["label"].replace(" ", "\n", 1), {a["name"]: a for a in sp["arms"]}, sp["n"]))
+    return synth, real, stages
+
+
+def card_real_drop():
+    got = _real_stages()
+    if not got:
+        return
+    synth, real, stages = got
+    fig = plt.figure(figsize=(12, 6.75))
+    ax = fig.add_axes([0.08, 0.17, 0.5, 0.58])
+    xs = list(range(len(stages)))
+    ax.axvspan(0.5, len(stages) - 0.5, color=PAPER_WASH, lw=0, zorder=0)
+    ax.text(len(stages) / 2, 1.0, "real agent tool output", fontsize=11, color=MUTED, ha="center", va="top")
+    series = [("supercompress-fast", BLUE, "o"), ("probe0-tool-compact", INK, "D"), ("bm25-35", FAINT, "s")]
+    for n, c, m in series:
+        ys, los, his = [], [], []
+        for _, arms, _ in stages:
+            a = arms[n]
+            cr = a["compressed"]
+            ys.append(cr["p"]); los.append(cr["lo"]); his.append(cr["hi"])
+        if n == "supercompress-fast":
+            ax.fill_between(xs, los, his, color=c, alpha=0.1, lw=0)
+        ax.plot(xs, ys, color=c, lw=2.4 if n == "supercompress-fast" else 1.6, ls="--" if n == "bm25-35" else "-",
+                marker=m, ms=9 if n == "supercompress-fast" else 7, mfc=c if n != "bm25-35" else "white", mec=c, zorder=4)
+        other = "probe0-tool-compact" if n == "supercompress-fast" else "supercompress-fast"
+        for k, (x, y) in enumerate(zip(xs, ys)):
+            if n == "bm25-35" or k == len(xs) - 1:
+                continue
+            off = 15 if y >= stages[k][1][other]["compressed"]["p"] else -17
+            ax.annotate(f"{y * 100:.0f}%", (x, y), xytext=(0, off), textcoords="offset points", ha="center",
+                        va="center", fontsize=12, color=c)
+        dy = {"probe0-tool-compact": 9, "bm25-35": -5, "supercompress-fast": -4}[n]
+        tail = "" if n == "bm25-35" else f"  {ys[-1] * 100:.0f}%"
+        ax.annotate(f"{label(n)}{tail}", (xs[-1], ys[-1]), xytext=(14, dy), textcoords="offset points", fontsize=12,
+                    color=c, va="center", ha="left")
+    ax.set_xticks(xs)
+    ax.set_xticklabels([f"{s[0].replace(chr(10), ' ')}\nn = {s[2]}" for s in stages], fontsize=11)
+    ax.set_xlim(-0.3, len(stages) - 0.7)
+    ax.set_ylim(0, 1.06)
+    pct_axis(ax)
+    ax.tick_params(axis="y", labelsize=11)
+    ax.set_ylabel("Evidence kept, on inputs it actually cut", fontsize=12)
+    ax.grid(axis="y", color=RULE, lw=0.6)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    fast = [s[1]["supercompress-fast"]["compressed"]["p"] for s in stages]
+    fig.text(0.07, 0.93, "Our benchmark said 93%. Real agents said otherwise.", fontsize=25, color=INK, va="top")
+    fig.text(0.07, 0.855, "Same engine, same metric. Only the tool output changed: from our generators to real coding-agent sessions.",
+             fontsize=12.5, color=MUTED, va="top")
+    blocks = [
+        (f"{fast[0] * 100:.0f}% → {fast[-1] * 100:.0f}%", "SuperCompress Fast, synthetic\nto a different agent harness", BLUE),
+        (f"{stages[2][1]['probe0-tool-compact']['abstain'] * 100:.0f}%", "of real SWE-agent outputs Probe0\nreturns unchanged (cut under 5%)", INK),
+        (f"{sum(s[2] for s in stages[1:])}", "real agent tasks. Evidence = lines the\nagent used next. No LLM labels.", MUTED),
+    ]
+    for k, (big, small, c) in enumerate(blocks):
+        y = 0.74 - k * 0.2
+        fig.text(0.74, y, big, fontsize=34, color=c, va="top")
+        fig.text(0.74, y - 0.09, small, fontsize=11.5, color=MUTED, va="top", linespacing=1.25)
+    fig.text(0.07, 0.035, "compress-bench · real splits: SWE-agent (CC-BY-4.0), sealed test, OpenHands · 95% Wilson bands · "
+             "supercompress.github.io/compress-bench", fontsize=10, color=FAINT, family="Geist Mono")
+    _save_card(fig, "card-real-drop")
+
+
+def card_passthrough():
+    got = _real_stages()
+    if not got:
+        return
+    synth, real, stages = got
+    fig = plt.figure(figsize=(12, 6.75))
+    fig.text(0.07, 0.93, "Returning the input unchanged scores 100%.", fontsize=25, color=INK, va="top")
+    fig.text(0.07, 0.855, "So every compressor’s recall needs its passthrough rate next to it. Here is ours and Probe0’s, on each split.",
+             fontsize=12.5, color=MUTED, va="top")
+    ax = fig.add_axes([0.2, 0.17, 0.71, 0.58])
+    rows = []
+    for st, arms, n in stages:
+        for name in ("supercompress-fast", "probe0-tool-compact"):
+            a = arms[name]
+            prim = a["primary"]["p"] if isinstance(a["primary"], dict) else a["primary"]
+            rows.append((st.replace("\n", " "), name, a["abstain"], prim, a["compressed"]["p"], a["compressed"]["n"]))
+    ys = []
+    y = 0
+    for i, (st, name, ab, prim, cp, cn) in enumerate(rows):
+        if i and i % 2 == 0:
+            y += 0.55
+        ys.append(y)
+        c = BLUE if name == "supercompress-fast" else INK
+        ax.barh(y, ab, color=c, alpha=0.18, height=0.72, lw=0)
+        ax.barh(y, 1 - ab, left=ab, color=c, height=0.72, lw=0)
+        ax.text(ab / 2 if ab > 0.12 else ab + 0.01, y, f"{ab * 100:.0f}% unchanged", va="center",
+                ha="center" if ab > 0.12 else "left", fontsize=10, color=c)
+        ax.text(ab + (1 - ab) / 2, y, f"cut: keeps {cp * 100:.0f}%", va="center", ha="center", fontsize=10.5,
+                color="white")
+        ax.text(1.015, y, f"{prim * 100:.0f}%", va="center", ha="left", fontsize=12, color=c)
+        y += 1
+    ax.set_yticks(ys)
+    ax.set_yticklabels([f"{r[0]} · {'Fast' if r[1] == 'supercompress-fast' else 'Probe0'}" for r in rows], fontsize=10.5)
+    ax.invert_yaxis()
+    ax.set_xlim(0, 1)
+    pct_axis(ax, "x")
+    ax.tick_params(axis="x", labelsize=10)
+    ax.set_xlabel("Share of inputs: light = returned unchanged, solid = actually compressed", fontsize=11)
+    ax.text(1.015, -0.9, "headline\nrecall", fontsize=9.5, color=MUTED, ha="left", va="bottom", linespacing=1.2)
+    for side in ("top", "right", "left"):
+        ax.spines[side].set_visible(False)
+    ax.tick_params(axis="y", length=0)
+    fig.text(0.07, 0.035, "compress-bench · passthrough = cut under 5% · ‘keeps’ = primary recall on compressed inputs · "
+             "supercompress.github.io/compress-bench", fontsize=10, color=FAINT, family="Geist Mono")
+    _save_card(fig, "card-passthrough")
+
+
 if __name__ == "__main__":
     fig_frontier()
     fig_forest()
@@ -597,3 +728,5 @@ if __name__ == "__main__":
     fig_cost()
     fig_real()
     fig_card()
+    card_real_drop()
+    card_passthrough()

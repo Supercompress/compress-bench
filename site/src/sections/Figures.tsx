@@ -57,6 +57,18 @@ const FIGS: Fig[] = [
     note: "Recall on every task against recall on only the tasks each arm cut, on SWE-agent dev, the sealed test split and OpenHands.",
     wide: true,
   },
+  {
+    id: "card-real-drop",
+    n: "Social card · real world",
+    title: "Synthetic to real: recall on inputs each tool actually cut",
+    note: "Same engine and metric from our synthetic test to public dev, the sealed test and a different agent harness. 16:9 for X and LinkedIn.",
+  },
+  {
+    id: "card-passthrough",
+    n: "Social card · passthrough",
+    title: "Headline recall, split into passthrough and real compression",
+    note: "How much each product returns unchanged, and how much it keeps on the inputs it does cut. 16:9.",
+  },
 ];
 
 const BIBTEX = `@misc{compressbench2026,
