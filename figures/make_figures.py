@@ -654,7 +654,7 @@ def card_real_drop():
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fast = [s[1]["supercompress-fast"]["compressed"]["p"] for s in stages]
-    fig.text(0.07, 0.93, "Our benchmark said 93%. Real agents said otherwise.", fontsize=25, color=INK, va="top")
+    fig.text(0.07, 0.93, f"Our benchmark said {fast[0] * 100:.0f}%. Real agents said otherwise.", fontsize=25, color=INK, va="top")
     fig.text(0.07, 0.855, "Same engine, same metric. Only the tool output changed: from our generators to real coding-agent sessions.",
              fontsize=12.5, color=MUTED, va="top")
     blocks = [

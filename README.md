@@ -109,26 +109,37 @@ Same 35% budget, local arms on every task. Read the passthrough column first.
 
 | Split | Arm | Primary recall | Passthrough | Recall when it compressed | Cut | Recovery-adjusted cut |
 |---|---|---|---:|---|---:|---:|
-| `real-dev` | `supercompress-fast` | 69.9% (63–76) | 35.2% | 54.4% (n=125) | 53.4% | 14.6% |
+| `real-dev` | `supercompress-fast` | 94.3% (90–97) | 74.1% | 78.0% (n=50) | 35.4% | 12.8% |
 | `real-dev` | `probe0-tool-compact` | 93.8% (89–96) | 85.0% | 58.6% (n=29) | 35.7% | 9.1% |
 | `real-dev` | `bm25-50` | 43.5% (37–51) | 0.0% | 43.5% (n=193) | 53.3% | −15.5% |
 | `real-dev` | `truncate-tail-35` | 33.2% (27–40) | 0.0% | 33.2% (n=193) | 65.8% | 8.1% |
-| `real-test` | `supercompress-fast` | 68.6% (61–75) | 39.4% | 48.1% (n=106) | 43.0% | 13.4% |
+| `real-test` | `supercompress-fast` | 90.3% (85–94) | 74.9% | 61.4% (n=44) | 25.7% | 15.8% |
 | `real-test` | `probe0-tool-compact` | 96.0% (92–98) | 85.1% | 73.1% (n=26) | 33.3% | 15.5% |
 | `real-test` | `bm25-50` | 40.0% (33–47) | 0.0% | 40.0% (n=175) | 55.0% | −14.1% |
 | `real-test` | `truncate-tail-35` | 36.6% (30–44) | 0.0% | 36.6% (n=175) | 66.0% | 7.8% |
-| `real-external` | `supercompress-fast` | 57.7% (50–65) | 42.3% | 26.7% (n=101) | 56.5% | 2.6% |
+| `real-external` | `supercompress-fast` | 64.6% (57–71) | 56.6% | 18.4% (n=76) | 54.4% | 3.9% |
 | `real-external` | `probe0-tool-compact` | 64.0% (57–71) | 40.0% | 40.0% (n=105) | 59.7% | 3.2% |
 | `real-external` | `bm25-50` | 42.3% (35–50) | 0.0% | 42.3% (n=175) | 54.5% | −16.7% |
 | `real-external` | `truncate-tail-35` | 38.9% (32–46) | 0.0% | 38.9% (n=175) | 66.0% | −8.9% |
 
 What this shows, including where it hurts us:
 
-- **The synthetic score does not transfer.** `supercompress-fast` keeps 93% of answers on synthetic tasks it cuts, but 54% on real-dev, 48% on sealed real-test and 27% on OpenHands.
-- **Probe0's real-world recall is mostly passthrough.** On SWE-agent output it returns 85% of inputs unchanged. On the inputs it does cut, it keeps 59–73%, ahead of us, though on only 26–29 tasks, so its intervals are wide.
+- **We now rank first on every split, but the real-world leads are within noise.** On sealed real-test our recovery-adjusted cut is 15.8% against Probe0's 15.5%; on OpenHands it is 3.9% against 3.2%. Both arms share tier 1 on all three real splits.
+- **Much of the recall gain is passthrough.** This engine version leaves inputs under about 1k tokens alone, so it returns 74–75% of SWE-agent outputs unchanged (Probe0: 85%). Read the recall column next to that.
+- **Probe0 still keeps more when it does cut.** On sealed real-test it keeps the answer on 73.1% of the inputs it compresses against our 61.4%; on OpenHands 40.0% against our 18.4%.
+- **The synthetic score does not transfer.** `supercompress-fast` keeps 92% of answers on synthetic tasks it cuts, 78% on real-dev, 61% on sealed real-test and 18% on OpenHands.
 - **Nobody generalises across harnesses yet.** On OpenHands both products sit near or below the BM25 line once passthrough is removed. That split is the number a compressor has to win.
 
-`supercompress-fast` here is the engine after a structure-aware pass (test verdicts, search-hit lists, enclosing code blocks), developed on real-dev only. Against the same engine without that pass, recall when it compressed went from 29.0% to 48.1% on sealed real-test and from 21.8% to 26.7% on real-external. Synthetic results did not change.
+#### Engine versions
+
+Each version is scored once on the held-out splits; earlier scores stay listed.
+
+| Version | Change | real-test recall · when compressed · RAC | real-external recall · when compressed · RAC | synthetic test recall |
+|---|---|---|---|---|
+| v1 | Structure-aware pass (test verdicts, search-hit lists, enclosing code blocks), developed on real-dev | 68.6% · 48.1% · 13.4% | 57.7% · 26.7% · 2.6% | 96.2% |
+| v2 | Agent tool output rules (inputs under ~1k tokens pass through, every search hit kept, head/tail tool status lines, test failure and summary lines, code window around `goto`/`open` targets), developed on real-dev and synthetic dev | 90.3% · 61.4% · 15.8% | 64.6% · 18.4% · 3.9% | 96.2% |
+
+RAC = recovery-adjusted cut. Before v1, recall when compressed was 29.0% on sealed real-test and 21.8% on real-external. v2 synthetic numbers come from a rerun of the local arms (`supercompress-live` and the worker arms in the leaderboard above were not rerun).
 
 Sealed splits (`real-test`, `real-external`) are published as scores only: `results-real-*/` replace task ids with hashes and drop gold text.
 
