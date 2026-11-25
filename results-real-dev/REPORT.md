@@ -1,8 +1,8 @@
 # compress-bench report
 
-Generated 2026-11-20T04:01:16.553Z · split **real-dev** (seed 2407798777) · 193 tasks · 0 families · tokenizer o200k_base · budget ratio 0.35
+Generated 2026-11-25T18:42:52.600Z · split **real-dev** (seed 2407798777) · 193 tasks · 0 families · tokenizer o200k_base · budget ratio 0.35
 
-Corpus fingerprint `fa4e4053573cfc77` · 310,860 input tokens per arm · bench 3c0f487+dirty
+Corpus fingerprint `fa4e4053573cfc77` · 310,860 input tokens per arm · bench 84daeb7
 
 ## Leaderboard
 
@@ -10,8 +10,8 @@ Ranking rule (fixed before the run): correctness tiers first, then recovery-adju
 
 | # | Arm | Tier | n | Primary recall [95% CI] | All-gold recall | Cut [95% CI] | Recovery-adj. cut | Abstained | Recall when it compressed | vs BM25 @ same cut | Errors | p50 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | **probe0-tool-compact** | 1 | 193 | 93.8% [89%–96%] | 93.3% | 35.7% [22%–46%] | 9.1% | 85.0% | 58.6% (n=29) | +39.4 pp* | 0 | 0.18 |
-| 2 | **supercompress-fast** | 2 | 193 | 69.9% [63%–76%] | 66.8% | 53.4% [45%–61%] | 14.6% | 35.2% | 54.4% (n=125) | +26.5 pp | 0 | 5.05 |
+| 1 | **supercompress-fast** | 1 | 193 | 94.3% [90%–97%] | 92.7% | 35.4% [24%–46%] | 12.8% | 74.1% | 78.0% (n=50) | +39.9 pp* | 0 | 0.03 |
+| 2 | **probe0-tool-compact** | 1 | 193 | 93.8% [89%–96%] | 93.3% | 35.7% [22%–46%] | 9.1% | 85.0% | 58.6% (n=29) | +39.4 pp* | 0 | 0.06 |
 
 \* arm's cut is outside the measured BM25 range; compared against the nearest BM25 point.
 
@@ -42,8 +42,8 @@ Compression only changes input tokens. Each context token is priced as one cache
 | Arm | Tokens paid (recovery-adj.) | Fable 5.2 | Opus 5.5 | Sonnet 5.5 | Haiku 5.5 |
 |---|---:|---:|---:|---:|---:|
 | raw | 100.0% of raw | $3.73 | $2.18 | $1.09 | $0.07 |
+| supercompress-fast | 87.2% of raw | $3.25 | $1.90 | $0.95 | $0.06 |
 | probe0-tool-compact | 90.9% of raw | $3.39 | $1.98 | $0.99 | $0.06 |
-| supercompress-fast | 85.4% of raw | $3.19 | $1.86 | $0.93 | $0.06 |
 | bm25-35 | 107.6% of raw | $4.01 | $2.34 | $1.17 | $0.08 |
 
 ### Monthly projection on Opus 5.5
@@ -55,8 +55,8 @@ Compression only changes input tokens. Each context token is priced as one cache
 | Arm | Team (1x) cost | saved / mo | saved / yr | Enterprise (10x) cost | saved / mo | saved / yr | Enterprise (100x) cost | saved / mo | saved / yr |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | raw | $7.0k | $0.00 | $0.00 | $70.0k | $0.00 | $0.00 | $700.0k | $0.00 | $0.00 |
+| supercompress-fast | $6.1k | $897.84 | $10.8k | $61.0k | $9.0k | $107.7k | $610.2k | $89.8k | $1.08M |
 | probe0-tool-compact | $6.4k | $635.19 | $7.6k | $63.6k | $6.4k | $76.2k | $636.5k | $63.5k | $762.2k |
-| supercompress-fast | $6.0k | $1.0k | $12.3k | $59.8k | $10.2k | $122.8k | $597.7k | $102.3k | $1.23M |
 | bm25-35 | $7.5k | −$529.49 | −$6.4k | $75.3k | −$5.3k | −$63.5k | $752.9k | −$52.9k | −$635.4k |
 
 ### Monthly projection on Sonnet 5.5
@@ -68,8 +68,8 @@ Compression only changes input tokens. Each context token is priced as one cache
 | Arm | Team (1x) cost | saved / mo | saved / yr | Enterprise (10x) cost | saved / mo | saved / yr | Enterprise (100x) cost | saved / mo | saved / yr |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | raw | $3.5k | $0.00 | $0.00 | $35.0k | $0.00 | $0.00 | $350.0k | $0.00 | $0.00 |
+| supercompress-fast | $3.1k | $448.92 | $5.4k | $30.5k | $4.5k | $53.9k | $305.1k | $44.9k | $538.7k |
 | probe0-tool-compact | $3.2k | $317.60 | $3.8k | $31.8k | $3.2k | $38.1k | $318.2k | $31.8k | $381.1k |
-| supercompress-fast | $3.0k | $511.52 | $6.1k | $29.9k | $5.1k | $61.4k | $298.8k | $51.2k | $613.8k |
 | bm25-35 | $3.8k | −$264.75 | −$3.2k | $37.6k | −$2.6k | −$31.8k | $376.5k | −$26.5k | −$317.7k |
 
 Projections scale this corpus's recall and cut linearly. Real savings depend on how much of your traffic looks like these task families.
@@ -107,7 +107,7 @@ Projections scale this corpus's recall and cut linearly. Real savings depend on 
 | truncate-tail-35 | 2% / 66% | 6% / 65% | 100% / 66% |
 | random-lines-35 | 25% / 54% | 24% / 52% | 36% / 56% |
 | bm25-35 | 39% / 67% | 45% / 59% | 36% / 61% |
-| supercompress-fast | 64% / 56% | 71% / 45% | 78% / 55% |
+| supercompress-fast | 93% / 35% | 96% / 22% | 95% / 44% |
 | probe0-tool-compact | 95% / 38% | 90% / 24% | 95% / 39% |
 
 ## Primary recall / cut by input size
@@ -119,7 +119,7 @@ Projections scale this corpus's recall and cut linearly. Real savings depend on 
 | truncate-tail-35 | 29% / 67% | 33% / 66% | 57% / 65% |
 | random-lines-35 | 27% / 52% | 29% / 53% | 33% / 57% |
 | bm25-35 | 44% / 61% | 31% / 61% | 29% / 66% |
-| supercompress-fast | 72% / 33% | 67% / 50% | 67% / 68% |
+| supercompress-fast | 99% / 5% | 88% / 31% | 76% / 57% |
 | probe0-tool-compact | 99% / 1% | 95% / 7% | 57% / 69% |
 
 ## Primary recall / cut by query style
@@ -140,13 +140,13 @@ Projections scale this corpus's recall and cut linearly. Real savings depend on 
 
 | Arm | Fidelity | Tasks w/ novel lines | Novel lines | Out-of-order | Untouched | Expanded | Distractors kept / task | p95 latency | Determinism |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| raw | 100.0% | 0 | 0 | 0 | 193 | 0 | 0.00 | 0.03 | 188/193 identical |
-| truncate-head-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.11 | 188/193 identical |
-| truncate-tail-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.27 | 188/193 identical |
-| random-lines-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.39 | 188/193 identical |
-| bm25-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 1.64 | 188/193 identical |
-| supercompress-fast | 100.0% | 0 | 0 | 1 | 64 | 0 | 0.00 | 44 | 188/193 identical |
-| probe0-tool-compact | 100.0% | 1 | 1 | 0 | 160 | 0 | 0.00 | 2.02 | 188/193 identical |
+| raw | 100.0% | 0 | 0 | 0 | 193 | 0 | 0.00 | 0.00 | 188/193 identical |
+| truncate-head-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.01 | 188/193 identical |
+| truncate-tail-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.01 | 188/193 identical |
+| random-lines-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.04 | 188/193 identical |
+| bm25-35 | 100.0% | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.43 | 188/193 identical |
+| supercompress-fast | 100.0% | 0 | 0 | 1 | 142 | 0 | 0.00 | 6.25 | 188/193 identical |
+| probe0-tool-compact | 100.0% | 1 | 1 | 0 | 160 | 0 | 0.00 | 0.67 | 188/193 identical |
 
 ## BM25 frontier
 
@@ -168,15 +168,15 @@ Exact McNemar on discordant task pairs; Holm-corrected within each tier step.
 
 | Step | Arm | vs (step leader) | Paired n | Only leader kept answer | Only arm kept answer | p | p (Holm) | Verdict |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | supercompress-fast | probe0-tool-compact | 193 | 52 | 7 | <0.001 | <0.001 | worse |
+| 1 | probe0-tool-compact | supercompress-fast | 193 | 8 | 7 | 1.000 | 1.000 | not distinguishable |
 
 ## Misses (primary answer lost), product arms
 
-- **supercompress-fast** (58): file-view ×21, search ×14, test-run ×9, traceback ×7, shell ×7
-  - `real.EdinburghGenomics__EGCG-Core-11.s41` missing: `could not find expected ':'`
-  - `real.PyCQA__pyflakes-729.s19` missing: `Line 651:    type annotation context.`, `Line 1158:            if isinstance(binding, Annotation) and not self.`
-  - `real.TheFriendlyCoder__pyjen-113.s7` missing: `1:"""Interface for interacting with Jenkins plugins"""`
+- **supercompress-fast** (11): traceback ×4, shell ×3, file-view ×2, test-run ×1, search ×1
   - `real.UC-Davis-molecular-computing__scadnano-python-package-288.s11` missing: `16:as well as making large-scale changes to them that are easier to de`, `100:# not currently used since this way of implementing it is has a bu`
+  - `real.asottile__pyupgrade-142.s13` missing: `tests/pyupgrade_test.py::test_fix_fstrings["{}{{}}{}".format(escaped, `
+  - `real.docker__docker-py-1167.s25` missing: `ConnectionRefusedError: [Errno 111] Connection refused`
+  - `real.ebroecker__canmatrix-470.s33` missing: `import xlsxwriter`, `ModuleNotFoundError: No module named 'xlsxwriter'`
 - **probe0-tool-compact** (12): shell ×5, test-run ×3, traceback ×2, search ×2
   - `real.airspeed-velocity__asv-702.s7` missing: `"pythons": ["2.7"],`, `//     Python version, as in the *pythons* variable above.`
   - `real.asottile__pyupgrade-142.s13` missing: `tests/pyupgrade_test.py::test_fix_fstrings["{}{{}}{}".format(escaped, `
@@ -190,8 +190,8 @@ Exact McNemar on discordant task pairs; Holm-corrected within each tier step.
 - **truncate-tail-35** (local, query not used): Keep the last 35% of characters (line-aligned). — `{}`
 - **random-lines-35** (local, query not used): Seeded random 35% of lines, original order. — `{}`
 - **bm25-35** (local, query-aware): BM25 line ranking against the query, 35% character budget. — `{}`
-- **supercompress-fast** (local, query-aware): SuperCompress Fast engine run in-process (budgetRatio 0.35). Reference for the hosted API; not the billed product path. — `{"path":"$SC_ROOT/packages/proxy/src/fast-compress.js","sha256":"bb2912e77657bf1e"}`
-- **probe0-tool-compact** (local, query-aware): Port of Probe0 CLI 0.1.19 agent tool-output compaction (bash fold/focus, read head/tail, web head). Kind mapped per family. — `{"path":"$SC_ROOT/scripts/bench_vs_probe0/probe0_tool_compact.js","sha256":"630e4300feca6f15"}`
+- **supercompress-fast** (local, query-aware): SuperCompress Fast engine run in-process (budgetRatio 0.35). Reference for the hosted API; not the billed product path. — `{"path":"~/Downloads/sc-fast-engine/packages/proxy/src/fast-compress.js","sha256":"814f2d87299fe0e0"}`
+- **probe0-tool-compact** (local, query-aware): Port of Probe0 CLI 0.1.19 agent tool-output compaction (bash fold/focus, read head/tail, web head). Kind mapped per family. — `{"path":"~/Downloads/supercompress/scripts/bench_vs_probe0/probe0_tool_compact.js","sha256":"630e4300feca6f15"}`
 
 ## Corpus
 

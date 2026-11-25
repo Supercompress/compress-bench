@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-19T20:21:58.939031</dc:date>
+    <dc:date>2026-11-25T10:46:56.423924</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -39,19 +39,19 @@ z
    </g>
    <g id="patch_3">
     <path d="M 172.8 134.312727 
-L 445.44 134.312727 
-L 445.44 154.003578 
+L 487.384615 134.312727 
+L 487.384615 154.003578 
 L 172.8 154.003578 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff; opacity: 0.18"/>
    </g>
    <g id="patch_4">
-    <path d="M 445.44 134.312727 
+    <path d="M 487.384615 134.312727 
 L 786.24 134.312727 
 L 786.24 154.003578 
-L 445.44 154.003578 
+L 487.384615 154.003578 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff"/>
    </g>
    <g id="patch_5">
     <path d="M 172.8 161.661131 
@@ -59,7 +59,7 @@ L 353.686154 161.661131
 L 353.686154 181.351982 
 L 172.8 181.351982 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729; opacity: 0.18"/>
    </g>
    <g id="patch_6">
     <path d="M 353.686154 161.661131 
@@ -67,23 +67,23 @@ L 786.24 161.661131
 L 786.24 181.351982 
 L 353.686154 181.351982 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729"/>
    </g>
    <g id="patch_7">
     <path d="M 172.8 204.051157 
-L 388.914912 204.051157 
-L 388.914912 223.742008 
+L 627.297696 204.051157 
+L 627.297696 223.742008 
 L 172.8 223.742008 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff; opacity: 0.18"/>
    </g>
    <g id="patch_8">
-    <path d="M 388.914912 204.051157 
+    <path d="M 627.297696 204.051157 
 L 786.24 204.051157 
 L 786.24 223.742008 
-L 388.914912 223.742008 
+L 627.297696 223.742008 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff"/>
    </g>
    <g id="patch_9">
     <path d="M 172.8 231.399561 
@@ -91,7 +91,7 @@ L 694.039968 231.399561
 L 694.039968 251.090412 
 L 172.8 251.090412 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729; opacity: 0.18"/>
    </g>
    <g id="patch_10">
     <path d="M 694.039968 231.399561 
@@ -99,23 +99,23 @@ L 786.24 231.399561
 L 786.24 251.090412 
 L 694.039968 251.090412 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729"/>
    </g>
    <g id="patch_11">
     <path d="M 172.8 273.789588 
-L 414.679392 273.789588 
-L 414.679392 293.480439 
+L 632.021184 273.789588 
+L 632.021184 293.480439 
 L 172.8 293.480439 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff; opacity: 0.18"/>
    </g>
    <g id="patch_12">
-    <path d="M 414.679392 273.789588 
+    <path d="M 632.021184 273.789588 
 L 786.24 273.789588 
 L 786.24 293.480439 
-L 414.679392 293.480439 
+L 632.021184 293.480439 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff"/>
    </g>
    <g id="patch_13">
     <path d="M 172.8 301.137992 
@@ -123,7 +123,7 @@ L 695.082816 301.137992
 L 695.082816 320.828843 
 L 172.8 320.828843 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729; opacity: 0.18"/>
    </g>
    <g id="patch_14">
     <path d="M 695.082816 301.137992 
@@ -131,23 +131,23 @@ L 786.24 301.137992
 L 786.24 320.828843 
 L 695.082816 320.828843 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729"/>
    </g>
    <g id="patch_15">
     <path d="M 172.8 343.528018 
-L 432.223776 343.528018 
-L 432.223776 363.218869 
+L 519.823008 343.528018 
+L 519.823008 363.218869 
 L 172.8 363.218869 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff; opacity: 0.18"/>
    </g>
    <g id="patch_16">
-    <path d="M 432.223776 343.528018 
+    <path d="M 519.823008 343.528018 
 L 786.24 343.528018 
 L 786.24 363.218869 
-L 432.223776 363.218869 
+L 519.823008 363.218869 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0566ff"/>
+" clip-path="url(#p1428835691)" style="fill: #0566ff"/>
    </g>
    <g id="patch_17">
     <path d="M 172.8 370.876422 
@@ -155,7 +155,7 @@ L 418.176 370.876422
 L 418.176 390.567273 
 L 172.8 390.567273 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729; opacity: 0.18"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729; opacity: 0.18"/>
    </g>
    <g id="patch_18">
     <path d="M 418.176 370.876422 
@@ -163,18 +163,18 @@ L 786.24 370.876422
 L 786.24 390.567273 
 L 418.176 390.567273 
 z
-" clip-path="url(#p17eb53e07a)" style="fill: #0f1729"/>
+" clip-path="url(#p1428835691)" style="fill: #0f1729"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m42896f869a" d="M 0 0 
+       <path id="m4a701f8a71" d="M 0 0 
 L 0 3.5 
 " style="stroke: #4b5567; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m42896f869a" x="172.8" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="172.8" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
@@ -184,7 +184,7 @@ L 0 3.5
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m42896f869a" x="295.488" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="295.488" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
@@ -194,7 +194,7 @@ L 0 3.5
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m42896f869a" x="418.176" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="418.176" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
@@ -204,7 +204,7 @@ L 0 3.5
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m42896f869a" x="540.864" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="540.864" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
@@ -214,7 +214,7 @@ L 0 3.5
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m42896f869a" x="663.552" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="663.552" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
@@ -224,7 +224,7 @@ L 0 3.5
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m42896f869a" x="786.24" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
+       <use xlink:href="#m4a701f8a71" x="786.24" y="403.38" style="fill: #4b5567; stroke: #4b5567; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
@@ -291,10 +291,10 @@ L 786.24 403.38
 " style="fill: none; stroke: #0f1729; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_16">
-    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="309.12" y="147.708153" transform="rotate(-0 309.12 147.708153)">44% unchanged</text>
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="330.092308" y="147.708153" transform="rotate(-0 330.092308 147.708153)">51% unchanged</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="615.84" y="147.885653" transform="rotate(-0 615.84 147.885653)">cut: keeps 93%</text>
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="636.812308" y="147.885653" transform="rotate(-0 636.812308 147.885653)">cut: keeps 92%</text>
    </g>
    <g id="text_18">
     <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="148.418153" transform="rotate(-0 795.4416 148.418153)">96%</text>
@@ -309,13 +309,13 @@ L 786.24 403.38
     <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="175.766557" transform="rotate(-0 795.4416 175.766557)">74%</text>
    </g>
    <g id="text_22">
-    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="280.857456" y="217.446583" transform="rotate(-0 280.857456 217.446583)">35% unchanged</text>
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="400.048848" y="217.446583" transform="rotate(-0 400.048848 217.446583)">74% unchanged</text>
    </g>
    <g id="text_23">
-    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="587.577456" y="217.624083" transform="rotate(-0 587.577456 217.624083)">cut: keeps 54%</text>
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="706.768848" y="217.624083" transform="rotate(-0 706.768848 217.624083)">cut: keeps 78%</text>
    </g>
    <g id="text_24">
-    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="218.156583" transform="rotate(-0 795.4416 218.156583)">70%</text>
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="218.156583" transform="rotate(-0 795.4416 218.156583)">94%</text>
    </g>
    <g id="text_25">
     <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="433.419984" y="244.794987" transform="rotate(-0 433.419984 244.794987)">85% unchanged</text>
@@ -327,13 +327,13 @@ L 786.24 403.38
     <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="245.504987" transform="rotate(-0 795.4416 245.504987)">94%</text>
    </g>
    <g id="text_28">
-    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="293.739696" y="287.185013" transform="rotate(-0 293.739696 287.185013)">39% unchanged</text>
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="402.410592" y="287.185013" transform="rotate(-0 402.410592 287.185013)">75% unchanged</text>
    </g>
    <g id="text_29">
-    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="600.459696" y="287.362513" transform="rotate(-0 600.459696 287.362513)">cut: keeps 48%</text>
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="709.130592" y="287.362513" transform="rotate(-0 709.130592 287.362513)">cut: keeps 61%</text>
    </g>
    <g id="text_30">
-    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="287.895013" transform="rotate(-0 795.4416 287.895013)">69%</text>
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="287.895013" transform="rotate(-0 795.4416 287.895013)">90%</text>
    </g>
    <g id="text_31">
     <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="433.941408" y="314.533417" transform="rotate(-0 433.941408 314.533417)">85% unchanged</text>
@@ -345,13 +345,13 @@ L 786.24 403.38
     <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0f1729" x="795.4416" y="315.243417" transform="rotate(-0 795.4416 315.243417)">96%</text>
    </g>
    <g id="text_34">
-    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="302.511888" y="356.923443" transform="rotate(-0 302.511888 356.923443)">42% unchanged</text>
+    <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0566ff" x="346.311504" y="356.923443" transform="rotate(-0 346.311504 356.923443)">57% unchanged</text>
    </g>
    <g id="text_35">
-    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="609.231888" y="357.100943" transform="rotate(-0 609.231888 357.100943)">cut: keeps 27%</text>
+    <text style="font-size: 10.5px; font-family: 'Geist'; text-anchor: middle; fill: #ffffff" x="653.031504" y="357.100943" transform="rotate(-0 653.031504 357.100943)">cut: keeps 18%</text>
    </g>
    <g id="text_36">
-    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="357.633443" transform="rotate(-0 795.4416 357.633443)">58%</text>
+    <text style="font-size: 12px; font-family: 'Geist'; text-anchor: start; fill: #0566ff" x="795.4416" y="357.633443" transform="rotate(-0 795.4416 357.633443)">65%</text>
    </g>
    <g id="text_37">
     <text style="font-size: 10px; font-family: 'Geist'; text-anchor: middle; fill: #0f1729" x="295.488" y="384.271847" transform="rotate(-0 295.488 384.271847)">40% unchanged</text>
@@ -378,7 +378,7 @@ L 786.24 403.38
   </g>
  </g>
  <defs>
-  <clipPath id="p17eb53e07a">
+  <clipPath id="p1428835691">
    <rect x="172.8" y="121.5" width="613.44" height="281.88"/>
   </clipPath>
  </defs>
